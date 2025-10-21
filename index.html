@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-List Pro تمرینی | مدیریت حرفه‌ای وظایف</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1> Todo-List Pro تمرینی </h1>
+            <p>مدیریت هوشمند کارهای روزمره</p>
+        </header>
+
+        <div class="app-container">
+            <!-- بخش افزودن تسک جدید -->
+            <div class="add-todo-section">
+                <div class="input-group">
+                    <input type="text" id="todoInput" placeholder="چه کاری باید انجام بدی؟" maxlength="200">
+                    <button id="addTodoBtn" class="btn-primary">➕ افزودن</button>
+                </div>
+                
+                <div class="todo-meta">
+                    <select id="categorySelect">
+                        <option value="general">عمومی</option>
+                        <option value="work">کار</option>
+                        <option value="personal">شخصی</option>
+                        <option value="shopping">خرید</option>
+                    </select>
+                    
+                    <input type="date" id="dueDate">
+                    
+                    <select id="prioritySelect">
+                        <option value="low">کم اهمیت</option>
+                        <option value="medium">متوسط</option>
+                        <option value="high">مهم</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- فیلتر و جستجو -->
+            <div class="filter-section">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="جستجو در تسک‌ها...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">همه</button>
+                    <button class="filter-btn" data-filter="active">فعال</button>
+                    <button class="filter-btn" data-filter="completed">انجام شده</button>
+                </div>
+            </div>
+
+            <!-- آمار -->
+            <div class="stats">
+                <span id="totalTasks">کل: ۰</span>
+                <span id="completedTasks">انجام شده: ۰</span>
+                <span id="pendingTasks">در انتظار: ۰</span>
+            </div>
+
+            <!-- لیست تسک‌ها -->
+            <div class="todo-list" id="todoList">
+                <!-- تسک‌ها اینجا نمایش داده می‌شوند -->
+            </div>
+        </div>
+    </div>
+
+    <script src="src/js/storage.js"></script>
+    <script src="src/js/todo.js"></script>
+    <script src="src/js/app.js"></script>
+</body>
+</html>
